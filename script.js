@@ -1,9 +1,9 @@
-const size = 100
-
+let size = 16
+const gridSizeBtn = document.querySelector(".gridsizebtn")
 const color = "black"
 const container = document.querySelector(".container")
 
-const divCreator = function () {
+ function divCreator(size) {
 
     container.innerHTML= "";
 
@@ -25,3 +25,13 @@ const divCreator = function () {
     }
 }
 divCreator()
+
+gridSizeBtn.addEventListener("click", () => {
+    let newSize = prompt("Enter the number of squares for each side")
+    newSize = parseInt(newSize)
+     if (newSize > 0 && newSize <= 100) {
+        divCreator(newSize)
+     } else {
+        alert("Please enter a valid number between 1 and 100")
+     }
+})

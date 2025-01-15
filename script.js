@@ -1,19 +1,22 @@
-const size = 8
+const size = 100
 
+const color = "black"
 const container = document.querySelector(".container")
 
 const divCreator = function () {
 
-    for (let i = 0; i == size; i++) {
-        let row = document.createElement("div")
-        div.classList.add("row");
+    container.innerHTML= "";
 
-        for ( let j=0; j == size; j++) {
+    for (let i = 0; i < size; i++) {
+        let row = document.createElement("div")
+        row.classList.add("row");
+
+        for ( let j=0; j < size; j++) {
             let square = document.createElement("div")
-            div.classList.add("square")
+            square.classList.add("square")
 
             square.addEventListener("mouseover", (e) => {
-                e.target.style.backgroundColor = black;
+                e.target.style.backgroundColor = color;
             })
 
         row.appendChild(square)
